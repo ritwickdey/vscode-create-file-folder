@@ -21,7 +21,7 @@
     ],
     "preview": true,
     "galleryBanner": {
-        "color": "#3f1f5c",
+        "color": "#41205f",
         "theme": "dark"
     },
     "activationEvents": [
@@ -54,7 +54,17 @@
             ]
         }
     },
-    
+    "license": "MIT",
+    "icon": "img/icon.png",
+    "bugs": {
+      "url": "https://github.com/ritwickdey/vscode-create-file-folder/issues",
+      "email": "ritwickdey@outlook.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ritwickdey/vscode-create-file-folder.git"
+    },
+    "homepage": "https://ritwickdey.github.io/vscode-create-file-folder/",
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
