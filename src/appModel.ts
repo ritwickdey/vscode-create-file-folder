@@ -8,8 +8,9 @@ export class AppModel {
     createFileOrFolder(taskType: 'file' | 'folder', relativePath: string = '/') {
         const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
         if (path.resolve(relativePath) === relativePath)
-            relativePath = relativePath.substring(projectRoot.length).replace("\\", "/");
-
+            relativePath = relativePath.substring(projectRoot.length).replace(/\\/g, "/");
+        
+        if(!relativePath.endsWith("/")) relativePath+= '/';
         const basepath = projectRoot;
 
         vscode.window.showInputBox({

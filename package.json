@@ -1,7 +1,7 @@
 {
     "name": "create-file-folder",
     "displayName": "Create File & Folder",
-    "description": "Create Files & Folder in Atom Style",
+    "description": "Create Files & Folder in Atom Style.",
     "version": "0.0.1",
     "publisher": "ritwickdey",
     "engines": {
@@ -45,11 +45,11 @@
             "explorer/context": [
                 {
                     "command": "extension.createFile",
-                    "group": "Files and Folder"
+                    "group": "navigation@-createFileFolder"
                 },
                 {
                     "command": "extension.createFolder",
-                    "group": "Files and Folder"
+                    "group": "navigation@-createFileFolder"
                 }
             ]
         }
