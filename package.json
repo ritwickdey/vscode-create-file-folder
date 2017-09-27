@@ -20,6 +20,10 @@
         "Other"
     ],
     "preview": true,
+    "galleryBanner": {
+        "color": "#3f1f5c",
+        "theme": "dark"
+    },
     "activationEvents": [
         "*"
     ],
@@ -28,14 +32,29 @@
         "commands": [
             {
                 "command": "extension.createFile",
-                "title": "Create File"
+                "title": "Create File",
+                "category": "Files and Folder"
             },
             {
                 "command": "extension.createFolder",
-                "title": "Create Folder"
+                "title": "Create Folder",
+                "category": "Files and Folder"
             }
-        ]
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.createFile",
+                    "group": "Files and Folder"
+                },
+                {
+                    "command": "extension.createFolder",
+                    "group": "Files and Folder"
+                }
+            ]
+        }
     },
+    
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",

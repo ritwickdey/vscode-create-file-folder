@@ -5,12 +5,15 @@ import * as path from 'path';
 
 export class AppModel {
 
-    createFileOrFolder(taskType: 'file' | 'folder', reletivePath: string = '/') {
+    createFileOrFolder(taskType: 'file' | 'folder', relativePath: string = '/') {
         const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
-        const basepath = path.join(projectRoot, reletivePath);
+        if (path.resolve(relativePath) === relativePath)
+            relativePath = relativePath.substring(projectRoot.length).replace("\\", "/");
+
+        const basepath = projectRoot;
 
         vscode.window.showInputBox({
-            value:  reletivePath,
+            value: relativePath || '/',
             prompt: `Create New ${taskType} (/path/subpath/to/${taskType})`,
             ignoreFocusOut: true,
             valueSelection: [-1, -1]
@@ -27,6 +30,14 @@ export class AppModel {
                     this.makefiles(paths);
                 else
                     this.makefolders(paths);
+
+                if (taskType === 'file') {
+                    vscode.workspace.openTextDocument(paths[0])
+                        .then((editor) => {
+                            if (!editor) return;
+                            vscode.window.showTextDocument(editor);
+                        });
+                }
             } catch (error) {
                 this.logError(error);
                 vscode.window.showErrorMessage("Somthing went wrong! Please report on GitHub");
