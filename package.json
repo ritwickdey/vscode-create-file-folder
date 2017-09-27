@@ -2,7 +2,7 @@
     "name": "create-file-folder",
     "displayName": "Create Files & Folders : On The Go",
     "description": "A small extension that help you to create files & folder in Atom Style.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "ritwickdey",
     "engines": {
         "vscode": "^1.14.0"
