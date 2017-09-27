@@ -9,7 +9,7 @@ Create File & folder in Atom Style.
 
 
 ## Extra 
-type ***`/path/subpath/file1 > file2 > file3`*** to create multiple file (`file1`, `file2`, `file3`) at a time.
+type ***`/path/subpath/file1 > file2 > file3`*** to create multiple file (`file1`, `file2`, `file3`) at a time in `/path/subpath/` path.
 
 ## Changelog 
 To see full Changelog, [click here](./CHANGELOG.md). 
