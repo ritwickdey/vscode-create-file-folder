@@ -1,24 +1,38 @@
 {
-    "name": "make-file-folder",
-    "displayName": "vscode-make-file-folder",
+    "name": "create-file-folder",
+    "displayName": "Create File & Folder",
     "description": "Create Files & Folder in Atom Style",
     "version": "0.0.1",
     "publisher": "ritwickdey",
     "engines": {
-        "vscode": "^1.16.0"
+        "vscode": "^1.14.0"
     },
+    "author": {
+        "name": "Ritwick Dey",
+        "email": "ritwickdey@outlook.com",
+        "url": "ritwickdey.github.io"
+    },
+    "keywords": [
+        "create files",
+        "create folders"
+    ],
     "categories": [
         "Other"
     ],
+    "preview": true,
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.createFile",
+                "title": "Create File"
+            },
+            {
+                "command": "extension.createFolder",
+                "title": "Create Folder"
             }
         ]
     },
