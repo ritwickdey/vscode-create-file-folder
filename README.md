@@ -1,4 +1,4 @@
-# Create File & Folder
+# Create File & Folder : On The Go
 
 A small extension that help you to create files & folder in Atom Style.
 
