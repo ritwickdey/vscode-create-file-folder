@@ -1,7 +1,5 @@
-# Change Log
-All notable changes to the "make-file-folder" extension will be documented in this file.
+# Changelog
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-- Initial release
+|Version|Date|Changelog|
+|--|--|--|
+|0.0.1|27.09.2017|Initial release |
