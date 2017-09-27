@@ -1,0 +1,21 @@
+theme: jekyll-theme-cayman
+repository: ritwickdey/vscode-create-file-folder
+
+gems:
+  - jekyll-seo-tag
+
+title: 'Create Files & Folders : On The Go | VSCode Extension'
+description : A small extension that help you to create files & folder in Atom Style
+author : Ritwick Dey
+twitter:username: Dey_Ritwick
+social:
+  name: 'Create Files & Folders : On The Go'
+  links:
+    - https://github.com/ritwickdey/vscode-create-file-folder
+    - https://marketplace.visualstudio.com/items?itemName=ritwickdey.create-file-folder
+lang: en_IN
+
+
+
+##Uncomment below for local test
+#github: [metadata]
