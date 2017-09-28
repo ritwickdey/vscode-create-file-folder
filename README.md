@@ -19,6 +19,9 @@ Type ***`/path/subpath/file1 > file2 > file3`*** to create multiple file (`file1
 
 ## What is New ?
 
+* #### Version 0.0.3 (28.09.2017)
+    * File & Folder Detection Fixed.
+
 * #### Version 0.0.2 (28.09.2017) 
     * Bug Fixed regarding backslash (`/`)
     * Preloaded file path fixed.
