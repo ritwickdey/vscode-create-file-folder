@@ -56,7 +56,7 @@ export class AppModel {
     }
 
     makeDirSync(dir: string) {
-        if (fs.existsSync(dir)) return;
+        if (fs.existsSync(dir) && fs.lstatSync(dir).isDirectory()) return;
         if (!fs.existsSync(path.dirname(dir))) {
             this.makeDirSync(path.dirname(dir));
         }
@@ -66,8 +66,16 @@ export class AppModel {
     makeFileSync(filename: string) {
         if (!fs.existsSync(filename)) {
             this.makeDirSync(path.dirname(filename));
-            fs.writeFileSync(filename, '', 'UTF-8');
+            fs.createWriteStream(filename).close();
         }
+    }
+
+
+    findDir(filePath: string) {
+        if (fs.statSync(filePath).isFile())
+            return path.dirname(filePath);
+    
+        return filePath;
     }
 
     logError(error) {

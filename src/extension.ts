@@ -8,20 +8,14 @@ export function activate(context: vscode.ExtensionContext) {
     const appModel = new AppModel();
 
     context.subscriptions.push(vscode.commands.registerCommand('extension.createFile', (file: vscode.Uri) => {
-        appModel.createFileOrFolder('file', file ? findDir(file.fsPath) : '/');
+        appModel.createFileOrFolder('file', file ? appModel.findDir(file.fsPath) : '/');
     }));
 
     context.subscriptions.push(vscode.commands.registerCommand('extension.createFolder', (file: vscode.Uri) => {
-        appModel.createFileOrFolder('folder', file ? findDir(file.fsPath) : '/');
+        appModel.createFileOrFolder('folder', file ? appModel.findDir(file.fsPath) : '/');
     }));
 }
 
-function findDir(filePath: string) {
-    if (fs.statSync(filePath).isFile())
-        return path.dirname(filePath);
-
-    return filePath;
-}
 
 export function deactivate() {
 
