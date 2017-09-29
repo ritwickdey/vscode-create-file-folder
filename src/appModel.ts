@@ -9,8 +9,8 @@ export class AppModel {
         const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
         if (path.resolve(relativePath) === relativePath)
             relativePath = relativePath.substring(projectRoot.length).replace(/\\/g, "/");
-        
-        if(!relativePath.endsWith("/")) relativePath+= '/';
+
+        if (!relativePath.endsWith("/")) relativePath += '/';
         const basepath = projectRoot;
 
         vscode.window.showInputBox({
@@ -32,8 +32,12 @@ export class AppModel {
                 else
                     this.makefolders(paths);
 
+
+
                 if (taskType === 'file') {
-                    vscode.workspace.openTextDocument(paths[0])
+                    let openPath = paths.find(path => fs.lstatSync(path).isFile())
+                    if(!openPath) return;
+                    vscode.workspace.openTextDocument(openPath)
                         .then((editor) => {
                             if (!editor) return;
                             vscode.window.showTextDocument(editor);
@@ -56,7 +60,7 @@ export class AppModel {
     }
 
     makeDirSync(dir: string) {
-        if (fs.existsSync(dir) && fs.lstatSync(dir).isDirectory()) return;
+        if (fs.existsSync(dir)) return;
         if (!fs.existsSync(path.dirname(dir))) {
             this.makeDirSync(path.dirname(dir));
         }
@@ -74,7 +78,7 @@ export class AppModel {
     findDir(filePath: string) {
         if (fs.statSync(filePath).isFile())
             return path.dirname(filePath);
-    
+
         return filePath;
     }
 
