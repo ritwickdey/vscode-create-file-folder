@@ -41,6 +41,16 @@
                 "category": "Files and Folder"
             }
         ],
+        "keybindings":[
+            {
+                "command": "extension.createFile",
+                "key": "ctrl+alt+n"
+            },
+            {
+                "command": "extension.createFolder",
+                "key": "ctrl+shift+alt+n"
+            }
+        ],
         "menus": {
             "explorer/context": [
                 {

@@ -5,7 +5,8 @@ import * as path from 'path';
 
 export class AppModel {
 
-    createFileOrFolder(taskType: 'file' | 'folder', relativePath: string = '/') {
+    createFileOrFolder(taskType: 'file' | 'folder', relativePath?: string) {
+        relativePath = relativePath || '/';
         const projectRoot = vscode.workspace.workspaceFolders[0].uri.fsPath;
         if (path.resolve(relativePath) === relativePath)
             relativePath = relativePath.substring(projectRoot.length).replace(/\\/g, "/");
@@ -76,6 +77,7 @@ export class AppModel {
 
 
     findDir(filePath: string) {
+        if(!filePath) return null;
         if (fs.statSync(filePath).isFile())
             return path.dirname(filePath);
 
