@@ -25,18 +25,15 @@ Open VSCode Editor and Press `ctrl+P`, type `ext install create-file-folder`.
 
 ## What is New ?
 
+* #### Version 0.0.5 (30.09.2017)
+    * Small Fixes  
+
 * #### Version 0.0.4 (30.09.2017)
     * Keyboard Shortcut added.
     * Small Fixes    
 
 * #### Version 0.0.3 (28.09.2017)
     * File & Folder Detection Fixed.
-
-* #### Version 0.0.2 (28.09.2017) 
-    * Bug Fixed regarding backslash (`/`)
-    * Preloaded file path fixed.
-    * Intro Gif added in description.
-
 
 ## Changelog 
 To see full Changelog, [click here](./CHANGELOG.md). 
