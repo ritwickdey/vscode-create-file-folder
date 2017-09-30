@@ -35,15 +35,17 @@ export class AppModel {
 
 
 
-                if (taskType === 'file') {
-                    let openPath = paths.find(path => fs.lstatSync(path).isFile())
-                    if(!openPath) return;
-                    vscode.workspace.openTextDocument(openPath)
-                        .then((editor) => {
-                            if (!editor) return;
-                            vscode.window.showTextDocument(editor);
-                        });
-                }
+                setTimeout(() => { //tiny delay
+                    if (taskType === 'file') {
+                        let openPath = paths.find(path => fs.lstatSync(path).isFile())
+                        if (!openPath) return;
+                        vscode.workspace.openTextDocument(openPath)
+                            .then((editor) => {
+                                if (!editor) return;
+                                vscode.window.showTextDocument(editor);
+                            });
+                    }
+                }, 50);
             } catch (error) {
                 this.logError(error);
                 vscode.window.showErrorMessage("Somthing went wrong! Please report on GitHub");
@@ -77,7 +79,7 @@ export class AppModel {
 
 
     findDir(filePath: string) {
-        if(!filePath) return null;
+        if (!filePath) return null;
         if (fs.statSync(filePath).isFile())
             return path.dirname(filePath);
 
