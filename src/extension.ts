@@ -1,17 +1,15 @@
 'use strict';
-import * as vscode from 'vscode';
-import * as path from 'path';
-import * as fs from 'fs';
+import { ExtensionContext, Uri, commands } from 'vscode';
 import { AppModel } from "./appModel";
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
     const appModel = new AppModel();
 
-    context.subscriptions.push(vscode.commands.registerCommand('extension.createFile', (file: vscode.Uri) => {
+    context.subscriptions.push(commands.registerCommand('extension.createFile', (file: Uri) => {
         appModel.createFileOrFolder('file', file ? appModel.findDir(file.fsPath) : '/');
     }));
 
-    context.subscriptions.push(vscode.commands.registerCommand('extension.createFolder', (file: vscode.Uri) => {
+    context.subscriptions.push(commands.registerCommand('extension.createFolder', (file: Uri) => {
         appModel.createFileOrFolder('folder', file ? appModel.findDir(file.fsPath) : '/');
     }));
 }
